@@ -1,0 +1,15 @@
+body{
+    color: white;
+    background-color: #0c0c0c;
+    overflow: hidden;
+}
+
+#user-cursor{
+    position: absolute;
+    top: 100px;
+    left: 400px;
+    background-color: #682BEB;
+    padding: 5px 10px;
+    border-radius: 999px;
+    white-space: nowrap;
+}
