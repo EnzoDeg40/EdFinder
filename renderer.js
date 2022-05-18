@@ -1,20 +1,31 @@
-let { ipcRenderer } = require("electron")
+// Liste et affiche les fichiers d'un dossier
+function ls(folderPath){
+    const directory = folderPath;
 
+    fs.readdir(directory, (err, files) => {
+        const result = document.getElementById("result");
+        result.innerHTML = "";
 
-let form = document.querySelector("form")
-let input = document.querySelector("input")
-let responses = document.querySelector("#responses")
+        files.forEach(file => {
+            if(itemTemplate == null){
+                console.error("itemTemplate is null");
+            }
+            
+            result.innerHTML += itemTemplate.replace("{name}", file);
+        })
+    });
+}
 
-form.addEventListener("submit", async (e) => {
-    e.preventDefault()
-    let line = input.value
-    input.value = ""
-    let responseText = await ipcRenderer.invoke("console", line)
-    let response = document.createElement("div")
-    response.textContent = responseText
-    responses.appendChild(response)
-    console.log(responseText)
-})
+const fs = require('fs')
+
+// Charge les templates HTML
+try {
+    var itemTemplate = fs.readFileSync('./templates/item.html', 'utf8')
+} catch (err) {
+    console.error(err)
+}
+
+ls('./node_modules/');
 
 onmousemove = function (e) {
     let margincursor = 20;
@@ -22,19 +33,3 @@ onmousemove = function (e) {
     usercusor.style.top = (e.clientY + margincursor) + "px";
     usercusor.style.left = (e.clientX + margincursor) + "px";
 }
-
-
-
-
-
-
-
-
-const directory = './out/';
-const fs = require('fs');
-
-fs.readdir(directory, (err, files) => {
-    files.forEach(file => {
-        console.log(file);
-    })
-});
