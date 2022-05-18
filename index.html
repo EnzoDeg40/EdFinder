@@ -11,10 +11,22 @@
 <body>
     <div id="user-cursor"></div>
 
-    <h1>Hello World!</h1>
-    Nous utilisons Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    et Electron <span id="electron-version"></span>.
+    <div id="top">
+        <form>
+            <input type="text" id="path-input" placeholder="Rechercher...">
+        </form>
+    </div>
+
+    <div id="result">
+        <h1>Hello World!</h1>
+        Nous utilisons Node.js <span id="node-version"></span>,
+        Chromium <span id="chrome-version"></span>,
+        et Electron <span id="electron-version"></span>.
+       
+        <div id="responses"></div>     
+    </div>
+
     <script src="./renderer.js"></script>
+
 </body>  
 </html>

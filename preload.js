@@ -11,10 +11,5 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     //replaceText('user-cursor', os.userInfo().username);
-
     document.getElementById('user-cursor').innerText = os.userInfo().username;
 })
-
-function mytest(){
-    console.log('test');
-}

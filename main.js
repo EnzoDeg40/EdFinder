@@ -3,7 +3,7 @@ const platform = require('node:process')
 const path = require('path')
 let os = require('os')
 
-console.log(os.userInfo().username + `in ${platform}`);
+console.log(`${os.userInfo().username} from ${platform.platform}`);
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -45,6 +45,16 @@ app.on('window-all-closed', () => {
 let { ipcMain } = require("electron")
 
 ipcMain.handle("console", (event, line) => {
-    console.log(`Received from frontend: ${line}`)
-    return `Backend confirms it received: ${line}`
+    //console.log(`Received from frontend: ${line}`)
+    //return `Backend confirms it received: ${line}`
+
+
+
+    const directory = './out/';
+    const fs = require('fs');
+    
+    return fs.readdir(directory, (err, files) => {
+        console.log(files);
+        return JSON.stringify(files);
+    });
 })
