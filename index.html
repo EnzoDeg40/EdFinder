@@ -7,6 +7,9 @@
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Home</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/top.css">
+    <link rel="stylesheet" href="styles/middle.css">
+    <link rel="stylesheet" href="styles/bottom.css">
 </head>
 <body>
     <div id="user-cursor"></div>
@@ -17,31 +20,35 @@
         </form>
     </div>
 
-    <div id="result">
-        <div class="item">
-            <img class="icon" src="assets/SVG/Folder.svg" alt="Folder">
-            <div class="name">{name}</div>
+    <div id="middle">
+        <div id="menu">
+            <div class="item">Acceuil</div>
+            <div class="item">Enzo</div>
+            <div class="item">Téléchargement</div>
+            <div class="item">Bureau</div>
+            <div class="separator"></div>
+            <div class="item">Racine /</div>
+            <div class="item">Disque C</div>
+            <div class="item">Disque D</div>
+            <div class="item">Disque E</div>
+            <div class="item">Disque F</div>
         </div>
 
-        <div class="item">
-            <img class="icon" src="assets/SVG/Folder.svg" alt="Folder">
-            <div class="name">Name</div>
-        </div>
-
-        <div class="item">
-            <img class="icon" src="assets/SVG/Folder.svg" alt="Folder">
-            <div class="name">Name</div>
-        </div>
+        <div id="result"></div>
     </div>
 
-    <!--
-    <h1>Hello World!</h1>
-    Nous utilisons Node.js <span id="node-version"></span>,
-    Chromium <span id="chrome-version"></span>,
-    et Electron <span id="electron-version"></span>.
-    
+    <div id="bottom">
+        Node.js <span id="node-version"></span>
+        Chromium <span id="chrome-version"></span>
+        Electron <span id="electron-version"></span>
+    </div>
+
+
+
+    <!-- 
     <div id="responses"></div>
     -->
+    
 
     <script src="./renderer.js"></script>
 

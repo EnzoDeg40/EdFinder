@@ -1,0 +1,37 @@
+#middle{
+    display: flex;
+}
+
+#menu{
+    background-color: #1A1A1C;
+}
+
+#result {
+    height: calc(100vh - 63px);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow: auto;
+}
+
+#result .item {
+    margin: 5px;
+    padding: 5px;
+    width: 64px;
+    min-width: 64px;
+}
+
+#result .item:hover {
+    background-color: #444444;
+    border-radius: 5px;
+}
+
+#result .item .icon {
+    width: 100%;
+}
+
+#result .item .name {
+    margin-top: 5px;
+    text-align: center;
+    width: 100%;
+}

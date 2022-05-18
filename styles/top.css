@@ -1,0 +1,14 @@
+#top {
+    background-color: #222222;
+    padding: 5px;
+    display: flex;
+}
+
+#path-input {
+    padding: 5px;
+    background-color: #333333;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    color: white;
+}
