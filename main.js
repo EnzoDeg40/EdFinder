@@ -10,13 +10,14 @@ const createWindow = () => {
         width: 800,
         height: 600,
         webPreferences: {
-            preload: path.join(__dirname, 'preload.js')
+            preload: path.join(__dirname, 'preload.js'),
+            nodeIntegration: true,
+            contextIsolation: false
         },
         icon: path.join(__dirname, 'astro.png'),
         title: 'EdFinder',
-        backgroundColor: '#0c0c0c'
+        backgroundColor: '#0c0c0c',   
     })
-
     win.loadFile('index.html')
 }
 
@@ -37,8 +38,13 @@ app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit()
 })
 
-function test(){
-    console.log('test');
-}
 
 
+
+
+let { ipcMain } = require("electron")
+
+ipcMain.handle("console", (event, line) => {
+    console.log(`Received from frontend: ${line}`)
+    return `Backend confirms it received: ${line}`
+})
