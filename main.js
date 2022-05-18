@@ -3,6 +3,12 @@ const platform = require('node:process')
 const path = require('path')
 let os = require('os')
 
+const autoUpdater = require("electron-updater");
+
+app.on("ready", () => {
+    autoUpdater.checkForUpdatesAndNotify();
+});
+
 console.log(`${os.userInfo().username} from ${platform.platform}`);
 
 const createWindow = () => {

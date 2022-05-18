@@ -7,7 +7,10 @@
     "test": "electron .",
     "start": "electron-forge start",
     "package": "electron-forge package",
-    "make": "electron-forge make"
+    "make": "electron-forge make",
+    "postinstall": "electron-builder install-app-deps",
+    "build": "electron-builder --mac --windows --linux",
+    "release": "electron-builder --mac --windows --linux --publish always"
   },
   "repository": {
     "type": "git",
@@ -29,7 +32,9 @@
   },
   "dependencies": {
     "custom-electron-titlebar": "^4.1.0",
+    "electron-builder": "^23.0.3",
     "electron-squirrel-startup": "^1.0.0",
+    "electron-updater": "^5.0.1",
     "username": "^6.0.0"
   },
   "config": {
@@ -57,6 +62,22 @@
           "config": {}
         }
       ]
+    }
+  },
+  "build": {
+    "appId": "fr.edstudio.edfinder",
+    "productName": "EdFinder",
+    "mac": {
+      "category": "public.app-category.productivity"
+    },
+    "dmg": {
+      "icon": false
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Office"
     }
   }
 }

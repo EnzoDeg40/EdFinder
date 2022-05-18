@@ -1,2 +1,2 @@
 # EdFinder
- A react finder
+ A electron finder
