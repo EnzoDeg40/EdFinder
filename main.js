@@ -3,7 +3,8 @@ const platform = require('node:process')
 const path = require('path')
 let os = require('os')
 
-const autoUpdater = require("electron-updater");
+const { autoUpdater } = require("electron-updater");
+const fs = require('fs').promises;
 
 app.on("ready", () => {
     autoUpdater.checkForUpdatesAndNotify();
