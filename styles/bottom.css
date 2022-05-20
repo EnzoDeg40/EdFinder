@@ -1,4 +1,10 @@
 #bottom {
     background-color: #1A1A1C;
     padding: 5px;
+    display: flex;
+}
+
+#electronInfo{
+    flex: 2;
+    text-align: right;
 }

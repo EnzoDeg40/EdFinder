@@ -7,6 +7,7 @@
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Home</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/fonts.css">
     <link rel="stylesheet" href="styles/top.css">
     <link rel="stylesheet" href="styles/middle.css">
     <link rel="stylesheet" href="styles/bottom.css">
@@ -24,7 +25,7 @@
         <div id="menu">
             <div class="item">Acceuil</div>
             <div class="item">Enzo</div>
-            <div class="item">Téléchargement</div>
+            <div class="item">Téléchargements</div>
             <div class="item">Bureau</div>
             <div class="separator"></div>
             <div class="item">Racine /</div>
@@ -38,9 +39,12 @@
     </div>
 
     <div id="bottom">
-        Node.js <span id="node-version"></span>
-        Chromium <span id="chrome-version"></span>
-        Electron <span id="electron-version"></span>
+        <div id="folderInfo"></div>
+        <div id="electronInfo">
+            Node.js <span id="node-version"></span>
+            Chromium <span id="chrome-version"></span>
+            Electron <span id="electron-version"></span>
+        </div>
     </div>
 
 

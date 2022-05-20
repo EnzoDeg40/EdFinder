@@ -6,6 +6,24 @@
     background-color: #1A1A1C;
 }
 
+#menu .item{
+    padding: 7.5px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+#menu .item:hover{
+    background-color: #2A2A2C;
+}
+
+#menu .separator{
+    background-color: rgb(174, 174, 174);
+    height: 2px;
+    width: 90%;
+    margin: 15px auto;
+    border-radius: 999px;
+}
+
 #result {
     height: calc(100vh - 63px);
     display: flex;
@@ -34,4 +52,12 @@
     margin-top: 5px;
     text-align: center;
     width: 100%;
+    overflow-wrap: break-word;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+
+    font-size: 12px;
 }
